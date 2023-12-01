@@ -47,7 +47,7 @@
 -(void)pencilToWakeDidRecognize:(id)arg1;
 @end
 
-@interface SBLockHardwareButton : NSObject
+@interface SBLockHardwareButton
 -(void)forceResetSequenceDidBegin;
 -(void)buttonDown:(id)arg1;
 -(void)singlePress:(id)arg1;
@@ -58,7 +58,7 @@
 -(BOOL)isButtonDown;
 @end
 
-@interface SBHomeHardwareButton : NSObject
+@interface SBHomeHardwareButton
 -(void)initialButtonDown:(id)arg1;
 -(void)initialButtonUp:(id)arg1;
 -(void)singlePressUp:(id)arg1;
