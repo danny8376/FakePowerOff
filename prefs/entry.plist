@@ -81,16 +81,16 @@
 				<string>None</string>
 				<string>RespringSBReload</string>
 				<string>RespringKillall</string>
-				<string>BlackBoot</string>
-				<string>WhiteBoot</string>
+				<!--string>BlackBoot</string>
+				<string>WhiteBoot</string-->
 			</array>
 			<key>validTitles</key>
 			<array>
 				<string>None</string>
 				<string>Respring (sbreload)</string>
 				<string>Respring (killall)</string>
-				<string>Black Boot Screen</string>
-				<string>White Boot Screen</string>
+				<!--string>Black Boot Screen</string>
+				<string>White Boot Screen</string-->
 			</array>
 		</dict>
 

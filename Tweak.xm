@@ -157,20 +157,20 @@ static void fakePowerOn() {
             });
             break;
         case FOnRespringSBReload:
-            respring_sbreload();
+        case FOnRespringKillall:
+            if (FakeOn == FOnRespringSBReload) {
+                respring_sbreload();
+            } else {
+                respring_killall();
+            }
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
                 [[(SpringBoard*)[%c(SpringBoard) sharedApplication] pluginUserAgent] undimScreen];
                 fakePoweredOn();
             });
             break;
-        case FOnRespringKillall:
-            respring_killall();
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-                fakePoweredOn();
-            });
-            break;
         case FOnBlackBoot:
         case FOnWhiteBoot:
+            // TODO: implement proper boot screen
             CGRect bounds = [[UIScreen mainScreen] bounds];
             UIWindow* window = [[UIWindow alloc] initWithFrame:bounds];
             window.windowLevel = 10000;
