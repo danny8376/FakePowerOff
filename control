@@ -1,0 +1,9 @@
+Package: moe.saru.homebrew.ios.fakepoweroff
+Name: FakePowerOff
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm64
+Description: An awesome MobileSubstrate tweak!
+Maintainer: DannyAAM <danny@saru.moe>
+Author: DannyAAM <danny@saru.moe>
+Section: Tweaks
