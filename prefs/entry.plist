@@ -22,13 +22,13 @@
 			<key>default</key>
 			<true/>
 			<key>defaults</key>
-			<string>moe.saru.homebrew.ios.fakepoweroff.enabled</string>
+			<string>moe.saru.homebrew.ios.fakepoweroff</string>
 			<key>key</key>
 			<string>Enabled</string>
 			<key>label</key>
 			<string>Enable</string>
 			<key>PostNotification</key>
-			<string>moe.saru.homebrew.ios.fakepoweroff.prefchanged</string>
+            <string>moe.saru.homebrew.ios.fakepoweroff/prefchanged</string>
 		</dict>
 
 		<dict>
@@ -37,13 +37,13 @@
 			<key>default</key>
 			<true/>
 			<key>defaults</key>
-			<string>moe.saru.homebrew.ios.fakepoweroff.reenable</string>
+			<string>moe.saru.homebrew.ios.fakepoweroff</string>
 			<key>key</key>
-			<string>Enabled</string>
+			<string>Reenable</string>
 			<key>label</key>
 			<string>Re-enable After Reboot</string>
 			<key>PostNotification</key>
-			<string>moe.saru.homebrew.ios.fakepoweroff.prefchanged</string>
+			<string>moe.saru.homebrew.ios.fakepoweroff/prefchanged</string>
 		</dict>
 
 		<dict>
@@ -52,13 +52,13 @@
 			<key>default</key>
 			<true/>
 			<key>defaults</key>
-			<string>moe.saru.homebrew.ios.fakepoweroff.nukesos</string>
+			<string>moe.saru.homebrew.ios.fakepoweroff</string>
 			<key>key</key>
-			<string>Enabled</string>
+			<string>NukeSOS</string>
 			<key>label</key>
 			<string>Nuke SOS</string>
 			<key>PostNotification</key>
-			<string>moe.saru.homebrew.ios.fakepoweroff.prefchanged</string>
+			<string>moe.saru.homebrew.ios.fakepoweroff/prefchanged</string>
 		</dict>
 
 		<dict>
@@ -67,15 +67,15 @@
 			<key>default</key>
 			<string>RespringKillall</string>
 			<key>defaults</key>
-			<string>moe.saru.homebrew.ios.fakepoweroff.fakeon</string>
+			<string>moe.saru.homebrew.ios.fakepoweroff</string>
 			<key>key</key>
-			<string>Value</string>
+			<string>FakeOn</string>
 			<key>label</key>
 			<string>Fake Power On</string>
 			<key>detail</key>
 			<string>PSListItemsController</string>
 			<key>PostNotification</key>
-			<string>moe.saru.homebrew.ios.fakepoweroff.prefchanged</string>
+			<string>moe.saru.homebrew.ios.fakepoweroff/prefchanged</string>
 			<key>validValues</key>
 			<array>
 				<string>None</string>
@@ -100,13 +100,13 @@
 			<key>default</key>
 			<false/>
 			<key>defaults</key>
-			<string>moe.saru.homebrew.ios.fakepoweroff.homeboot</string>
+			<string>moe.saru.homebrew.ios.fakepoweroff</string>
 			<key>key</key>
-			<string>Enabled</string>
+			<string>HomeBoot</string>
 			<key>label</key>
 			<string>Fake Boot With Home Button</string>
 			<key>PostNotification</key>
-			<string>moe.saru.homebrew.ios.fakepoweroff.prefchanged</string>
+			<string>moe.saru.homebrew.ios.fakepoweroff/prefchanged</string>
 		</dict>
 
 		<dict>
@@ -115,13 +115,13 @@
 			<key>default</key>
 			<false/>
 			<key>defaults</key>
-			<string>moe.saru.homebrew.ios.fakepoweroff.locked</string>
+			<string>moe.saru.homebrew.ios.fakepoweroff</string>
 			<key>key</key>
-			<string>Enabled</string>
+			<string>Locked</string>
 			<key>label</key>
 			<string>Locked Fake Power Off</string>
 			<key>PostNotification</key>
-			<string>moe.saru.homebrew.ios.fakepoweroff.prefchanged</string>
+			<string>moe.saru.homebrew.ios.fakepoweroff/prefchanged</string>
 		</dict>
 
 	</array>

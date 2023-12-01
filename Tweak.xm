@@ -90,13 +90,8 @@ NSDictionary *FakeOnsMap = @{
     @"WhiteBoot" : @(FOnWhiteBoot),
 };
 
-static NSString *nsEnabledString = @"moe.saru.homebrew.ios.fakepoweroff.enabled";
-static NSString *nsReenableString = @"moe.saru.homebrew.ios.fakepoweroff.reenable";
-static NSString *nsNukeSOSString = @"moe.saru.homebrew.ios.fakepoweroff.nukesos";
-static NSString *nsFakeOnString = @"moe.saru.homebrew.ios.fakepoweroff.fakeon";
-static NSString *nsHomeBootString = @"moe.saru.homebrew.ios.fakepoweroff.homeboot";
-static NSString *nsLockedString = @"moe.saru.homebrew.ios.fakepoweroff.locked";
-static NSString *nsNotificationString = @"moe.saru.homebrew.ios.fakepoweroff.prefchanged";
+static NSString *nsDomainString = @"moe.saru.homebrew.ios.fakepoweroff";
+static NSString *nsNotificationString = @"moe.saru.homebrew.ios.fakepoweroff/prefchanged";
 
 static BOOL Enabled;
 static BOOL NukeSOS;
@@ -108,15 +103,15 @@ static FakeStates FakeState = FakeSNormal;
 static BOOL InPowerOffView = NO;
 
 static void notificationCallback(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
-    NSNumber *v1 = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"Enabled" inDomain:nsEnabledString];
+    NSNumber *v1 = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"Enabled" inDomain:nsDomainString];
     Enabled = v1 ? [v1 boolValue] : YES;
-    NSNumber *v2 = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"Enabled" inDomain:nsNukeSOSString];
+    NSNumber *v2 = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"NukeSOS" inDomain:nsDomainString];
     NukeSOS = v2 ? [v2 boolValue] : YES;
-    NSString *v3 = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"Value" inDomain:nsFakeOnString];
+    NSString *v3 = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"FakeOn" inDomain:nsDomainString];
     FakeOn = v3 ? [[FakeOnsMap objectForKey:v3] integerValue] : FOnRespringKillall;
-    NSNumber *v4 = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"Enabled" inDomain:nsHomeBootString];
+    NSNumber *v4 = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"HomeBoot" inDomain:nsDomainString];
     HomeBoot = v4 ? [v4 boolValue] : NO;
-    NSNumber *v5 = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"Enabled" inDomain:nsLockedString];
+    NSNumber *v5 = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"Locked" inDomain:nsDomainString];
     Locked = v5 ? [v5 boolValue] : NO;
 
     if (!Enabled) {
@@ -380,13 +375,13 @@ static void fakePowerOff() {
 %end
 
 %ctor {
-    NSNumber *v1 = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"Enabled" inDomain:nsEnabledString];
+    NSNumber *v1 = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"Enabled" inDomain:nsDomainString];
     BOOL enabled = v1 ? [v1 boolValue] : YES;
-    NSNumber *v2 = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"Enabled" inDomain:nsReenableString];
+    NSNumber *v2 = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"Reenable" inDomain:nsDomainString];
     BOOL reenable = v2 ? [v2 boolValue] : YES;
     if (reenable && !enabled) {
         NSNumber *v = [[NSNumber alloc] initWithBool:YES];
-        [[NSUserDefaults standardUserDefaults] setObject:v forKey:@"Enabled" inDomain:nsEnabledString];
+        [[NSUserDefaults standardUserDefaults] setObject:v forKey:@"Enabled" inDomain:nsDomainString];
     }
 
     notificationCallback(NULL, NULL, NULL, NULL, NULL);
